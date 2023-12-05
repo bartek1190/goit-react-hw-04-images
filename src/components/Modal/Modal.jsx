@@ -1,13 +1,13 @@
 import css from './Modal.module.css';
+import { useImagesContext } from 'components/ImagesContext/ImagesContext';
 
-const Modal = ({ bigImgUrl, imgAlt }) => {
+export const Modal = () => {
+  const { selectedImage, tags } = useImagesContext();
   return (
     <div className={css.Overlay}>
       <div className={css.Modal}>
-        <img src={bigImgUrl} alt={imgAlt} />
+        <img src={selectedImage} alt={tags} />
       </div>
     </div>
   );
 };
-
-export default Modal;
